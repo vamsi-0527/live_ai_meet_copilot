@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design Tokens from FRONTEND_GUIDELINES.md */
+:root {
+  /* Base */
+  --bg: #0f1115;
+  --panel: #171a21;
+  --panel-2: #1d212a;
+  --border: #272c38;
+
+  /* Text */
+  --text: #e7e9ee;
+  --muted: #8a93a6;
+
+  /* Accent */
+  --accent: #6ea8fe;
+  --accent-2: #b388ff;
+
+  /* Semantic */
+  --good: #4ade80;
+  --warn: #fbbf24;
+  --danger: #ef4444;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Usage Rules */
+.bg-main { background-color: var(--bg); }
+.panel { background-color: var(--panel); }
+.panel-2 { background-color: var(--panel-2); }
+.border-main { border-color: var(--border); }
+.text-main { color: var(--text); }
+.text-muted { color: var(--muted); }
+.accent { color: var(--accent); }
+.accent-2 { color: var(--accent-2); }
+.good { color: var(--good); }
+.warn { color: var(--warn); }
+.danger { color: var(--danger); }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2f3a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Mockup Animations */
+@keyframes micPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.5); }
+  50% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+}
+
+.mic-recording {
+  animation: micPulse 1.4s infinite;
+}
+
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
+}
+
+.transcript-line-new {
+  animation: fadein 0.4s ease-out;
+}
